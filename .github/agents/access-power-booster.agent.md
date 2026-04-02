@@ -5,7 +5,7 @@
 # For format details, see: https://gh.io/customagents/config
 
 name: Access Power Booster
-description:
+description: Turns an Access DB app into a Power App
 ---
 
 # Access Power Booster
