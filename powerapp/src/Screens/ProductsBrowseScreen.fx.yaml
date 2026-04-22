@@ -1,0 +1,33 @@
+# Products Browse Screen
+As: Screen
+
+BrowseGallery_Products:
+  As: gallery.Vertical
+  Items: =Filter(auto_products, StartsWith(auto_productsname, SearchInput_Products.Text))
+  TemplateSize: =72
+
+  Title_Products:
+    As: label.Text
+    Text: =ThisItem.auto_productsname
+
+  Subtitle_Products:
+    As: label.Text
+    Text: =ThisItem.auto_productsname
+
+  Arrow_Products:
+    As: icon.ChevronRight
+    OnSelect: =Navigate(ProductsDetailScreen, ScreenTransition.Fade)
+
+SearchInput_Products:
+  As: input.text
+  HintText: ="Search Products..."
+  Default: =""
+
+BrowseHeader_Products:
+  As: label.Text
+  Text: ="Products"
+  FontWeight: =FontWeight.Bold
+
+AddButton_Products:
+  As: icon.Add
+  OnSelect: =NewForm(EditForm_Products); Navigate(ProductsEditScreen, ScreenTransition.Slide)

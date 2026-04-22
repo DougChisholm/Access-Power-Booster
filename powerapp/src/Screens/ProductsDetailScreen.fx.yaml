@@ -1,0 +1,30 @@
+# Products Detail Screen
+As: Screen
+
+DetailForm_Products:
+  As: form.Display
+  DataSource: =auto_products
+  Item: =BrowseGallery_Products.Selected
+
+  DataCard_Products_auto_productsname:
+    As: dataCard
+    FieldDisplayName: ="Productsname"
+    DataField: ="auto_productsname"
+
+
+DetailHeader_Products:
+  As: label.Text
+  Text: ="Products Detail"
+  FontWeight: =FontWeight.Bold
+
+BackButton_Detail_Products:
+  As: icon.Back
+  OnSelect: =Back()
+
+EditButton_Products:
+  As: icon.Edit
+  OnSelect: =EditForm(EditForm_Products); Navigate(ProductsEditScreen, ScreenTransition.Slide)
+
+DeleteButton_Products:
+  As: icon.Trash
+  OnSelect: =Remove(auto_products, BrowseGallery_Products.Selected); Back()

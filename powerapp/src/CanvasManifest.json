@@ -1,0 +1,13 @@
+{
+  "FormatVersion": 119,
+  "SavedFromVersion": "3.23091",
+  "Properties": {
+    "DocumentType": "App",
+    "Id": "com.access.migrated.app",
+    "Name": "Access Migrated App",
+    "Description": "Auto-generated from Access DB migration"
+  },
+  "PublishInfo": {
+    "AppName": "AccessMigratedApp"
+  }
+}

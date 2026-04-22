@@ -1,0 +1,30 @@
+# Systemsettings Detail Screen
+As: Screen
+
+DetailForm_Systemsettings:
+  As: form.Display
+  DataSource: =auto_systemsettings
+  Item: =BrowseGallery_Systemsettings.Selected
+
+  DataCard_Systemsettings_auto_systemsettingsname:
+    As: dataCard
+    FieldDisplayName: ="Systemsettingsname"
+    DataField: ="auto_systemsettingsname"
+
+
+DetailHeader_Systemsettings:
+  As: label.Text
+  Text: ="Systemsettings Detail"
+  FontWeight: =FontWeight.Bold
+
+BackButton_Detail_Systemsettings:
+  As: icon.Back
+  OnSelect: =Back()
+
+EditButton_Systemsettings:
+  As: icon.Edit
+  OnSelect: =EditForm(EditForm_Systemsettings); Navigate(SystemsettingsEditScreen, ScreenTransition.Slide)
+
+DeleteButton_Systemsettings:
+  As: icon.Trash
+  OnSelect: =Remove(auto_systemsettings, BrowseGallery_Systemsettings.Selected); Back()

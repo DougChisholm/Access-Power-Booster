@@ -1,0 +1,46 @@
+# App definition
+As: App
+
+OnStart: =Navigate(CustomersBrowseScreen, ScreenTransition.None)
+
+# Data sources (add these in Power Apps Studio → Data panel)
+# DataSources:
+  - auto_customers
+  - auto_employees
+  - auto_northwindfeatures
+  - auto_orderdetails
+  - auto_orderstatus
+  - auto_orders
+  - auto_products
+  - auto_systemsettings
+  - auto_welcome
+
+# Screen order
+Screens:
+  - CustomersBrowseScreen
+  - CustomersDetailScreen
+  - CustomersEditScreen
+  - EmployeesBrowseScreen
+  - EmployeesDetailScreen
+  - EmployeesEditScreen
+  - NorthwindfeaturesBrowseScreen
+  - NorthwindfeaturesDetailScreen
+  - NorthwindfeaturesEditScreen
+  - OrderdetailsBrowseScreen
+  - OrderdetailsDetailScreen
+  - OrderdetailsEditScreen
+  - OrderstatusBrowseScreen
+  - OrderstatusDetailScreen
+  - OrderstatusEditScreen
+  - OrdersBrowseScreen
+  - OrdersDetailScreen
+  - OrdersEditScreen
+  - ProductsBrowseScreen
+  - ProductsDetailScreen
+  - ProductsEditScreen
+  - SystemsettingsBrowseScreen
+  - SystemsettingsDetailScreen
+  - SystemsettingsEditScreen
+  - WelcomeBrowseScreen
+  - WelcomeDetailScreen
+  - WelcomeEditScreen

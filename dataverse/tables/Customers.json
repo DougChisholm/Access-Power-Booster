@@ -1,0 +1,65 @@
+{
+  "@odata.type": "Microsoft.Dynamics.CRM.EntityMetadata",
+  "SchemaName": "auto_customers",
+  "LogicalName": "auto_customers",
+  "DisplayName": {
+    "@odata.type": "Microsoft.Dynamics.CRM.Label",
+    "LocalizedLabels": [
+      {
+        "@odata.type": "Microsoft.Dynamics.CRM.LocalizedLabel",
+        "Label": "Customers",
+        "LanguageCode": 1033
+      }
+    ]
+  },
+  "DisplayCollectionName": {
+    "@odata.type": "Microsoft.Dynamics.CRM.Label",
+    "LocalizedLabels": [
+      {
+        "@odata.type": "Microsoft.Dynamics.CRM.LocalizedLabel",
+        "Label": "Customerss",
+        "LanguageCode": 1033
+      }
+    ]
+  },
+  "Description": {
+    "@odata.type": "Microsoft.Dynamics.CRM.Label",
+    "LocalizedLabels": [
+      {
+        "@odata.type": "Microsoft.Dynamics.CRM.LocalizedLabel",
+        "Label": "Migrated from Access table: Customers",
+        "LanguageCode": 1033
+      }
+    ]
+  },
+  "OwnershipType": "UserOwned",
+  "HasActivities": false,
+  "HasNotes": false,
+  "IsActivity": false,
+  "IsAuditEnabled": {
+    "Value": false
+  },
+  "PrimaryNameAttribute": "auto_customersname",
+  "PrimaryAttribute": {
+    "@odata.type": "Microsoft.Dynamics.CRM.StringAttributeMetadata",
+    "SchemaName": "auto_customersname",
+    "LogicalName": "auto_customersname",
+    "DisplayName": {
+      "@odata.type": "Microsoft.Dynamics.CRM.Label",
+      "LocalizedLabels": [
+        {
+          "@odata.type": "Microsoft.Dynamics.CRM.LocalizedLabel",
+          "Label": "Name",
+          "LanguageCode": 1033
+        }
+      ]
+    },
+    "RequiredLevel": {
+      "Value": "ApplicationRequired"
+    },
+    "MaxLength": 255
+  },
+  "Columns": [],
+  "access_source_table": "Customers",
+  "access_primary_keys": []
+}

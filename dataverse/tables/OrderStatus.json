@@ -1,0 +1,65 @@
+{
+  "@odata.type": "Microsoft.Dynamics.CRM.EntityMetadata",
+  "SchemaName": "auto_orderstatus",
+  "LogicalName": "auto_orderstatus",
+  "DisplayName": {
+    "@odata.type": "Microsoft.Dynamics.CRM.Label",
+    "LocalizedLabels": [
+      {
+        "@odata.type": "Microsoft.Dynamics.CRM.LocalizedLabel",
+        "Label": "Orderstatus",
+        "LanguageCode": 1033
+      }
+    ]
+  },
+  "DisplayCollectionName": {
+    "@odata.type": "Microsoft.Dynamics.CRM.Label",
+    "LocalizedLabels": [
+      {
+        "@odata.type": "Microsoft.Dynamics.CRM.LocalizedLabel",
+        "Label": "Orderstatuss",
+        "LanguageCode": 1033
+      }
+    ]
+  },
+  "Description": {
+    "@odata.type": "Microsoft.Dynamics.CRM.Label",
+    "LocalizedLabels": [
+      {
+        "@odata.type": "Microsoft.Dynamics.CRM.LocalizedLabel",
+        "Label": "Migrated from Access table: OrderStatus",
+        "LanguageCode": 1033
+      }
+    ]
+  },
+  "OwnershipType": "UserOwned",
+  "HasActivities": false,
+  "HasNotes": false,
+  "IsActivity": false,
+  "IsAuditEnabled": {
+    "Value": false
+  },
+  "PrimaryNameAttribute": "auto_orderstatusname",
+  "PrimaryAttribute": {
+    "@odata.type": "Microsoft.Dynamics.CRM.StringAttributeMetadata",
+    "SchemaName": "auto_orderstatusname",
+    "LogicalName": "auto_orderstatusname",
+    "DisplayName": {
+      "@odata.type": "Microsoft.Dynamics.CRM.Label",
+      "LocalizedLabels": [
+        {
+          "@odata.type": "Microsoft.Dynamics.CRM.LocalizedLabel",
+          "Label": "Name",
+          "LanguageCode": 1033
+        }
+      ]
+    },
+    "RequiredLevel": {
+      "Value": "ApplicationRequired"
+    },
+    "MaxLength": 255
+  },
+  "Columns": [],
+  "access_source_table": "OrderStatus",
+  "access_primary_keys": []
+}

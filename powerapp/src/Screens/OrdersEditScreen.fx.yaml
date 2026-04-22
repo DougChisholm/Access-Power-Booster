@@ -1,0 +1,34 @@
+# Orders Edit/New Screen
+As: Screen
+
+EditForm_Orders:
+  As: form.Edit
+  DataSource: =auto_orders
+  Item: =BrowseGallery_Orders.Selected
+
+  EditCard_Orders_auto_ordersname:
+    As: dataCard
+    FieldDisplayName: ="Ordersname"
+    DataField: ="auto_ordersname"
+    Required: =true
+
+
+EditHeader_Orders:
+  As: label.Text
+  Text: =If(EditForm_Orders.Mode = FormMode.New, "New Orders", "Edit Orders")
+  FontWeight: =FontWeight.Bold
+
+SaveButton_Orders:
+  As: button.Button
+  Text: ="Save"
+  OnSelect: |=
+    If(EditForm_Orders.Valid,
+      SubmitForm(EditForm_Orders);
+      Navigate(OrdersBrowseScreen, ScreenTransition.Back),
+      Notify("Please fill in all required fields.", NotificationType.Warning)
+    )
+
+CancelButton_Orders:
+  As: button.Button
+  Text: ="Cancel"
+  OnSelect: =ResetForm(EditForm_Orders); Back()

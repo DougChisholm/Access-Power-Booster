@@ -1,0 +1,30 @@
+# Employees Detail Screen
+As: Screen
+
+DetailForm_Employees:
+  As: form.Display
+  DataSource: =auto_employees
+  Item: =BrowseGallery_Employees.Selected
+
+  DataCard_Employees_auto_employeesname:
+    As: dataCard
+    FieldDisplayName: ="Employeesname"
+    DataField: ="auto_employeesname"
+
+
+DetailHeader_Employees:
+  As: label.Text
+  Text: ="Employees Detail"
+  FontWeight: =FontWeight.Bold
+
+BackButton_Detail_Employees:
+  As: icon.Back
+  OnSelect: =Back()
+
+EditButton_Employees:
+  As: icon.Edit
+  OnSelect: =EditForm(EditForm_Employees); Navigate(EmployeesEditScreen, ScreenTransition.Slide)
+
+DeleteButton_Employees:
+  As: icon.Trash
+  OnSelect: =Remove(auto_employees, BrowseGallery_Employees.Selected); Back()

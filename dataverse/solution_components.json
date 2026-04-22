@@ -1,0 +1,51 @@
+{
+  "solution_name": "AccessMigration",
+  "publisher_prefix": "auto",
+  "components": [
+    {
+      "type": "Entity",
+      "schemaName": "auto_customers",
+      "logicalName": "auto_customers"
+    },
+    {
+      "type": "Entity",
+      "schemaName": "auto_employees",
+      "logicalName": "auto_employees"
+    },
+    {
+      "type": "Entity",
+      "schemaName": "auto_northwindfeatures",
+      "logicalName": "auto_northwindfeatures"
+    },
+    {
+      "type": "Entity",
+      "schemaName": "auto_orderdetails",
+      "logicalName": "auto_orderdetails"
+    },
+    {
+      "type": "Entity",
+      "schemaName": "auto_orderstatus",
+      "logicalName": "auto_orderstatus"
+    },
+    {
+      "type": "Entity",
+      "schemaName": "auto_orders",
+      "logicalName": "auto_orders"
+    },
+    {
+      "type": "Entity",
+      "schemaName": "auto_products",
+      "logicalName": "auto_products"
+    },
+    {
+      "type": "Entity",
+      "schemaName": "auto_systemsettings",
+      "logicalName": "auto_systemsettings"
+    },
+    {
+      "type": "Entity",
+      "schemaName": "auto_welcome",
+      "logicalName": "auto_welcome"
+    }
+  ]
+}

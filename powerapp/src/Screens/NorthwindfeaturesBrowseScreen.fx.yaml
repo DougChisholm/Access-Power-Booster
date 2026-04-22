@@ -1,0 +1,33 @@
+# Northwindfeatures Browse Screen
+As: Screen
+
+BrowseGallery_Northwindfeatures:
+  As: gallery.Vertical
+  Items: =Filter(auto_northwindfeatures, StartsWith(auto_northwindfeaturesname, SearchInput_Northwindfeatures.Text))
+  TemplateSize: =72
+
+  Title_Northwindfeatures:
+    As: label.Text
+    Text: =ThisItem.auto_northwindfeaturesname
+
+  Subtitle_Northwindfeatures:
+    As: label.Text
+    Text: =ThisItem.auto_northwindfeaturesname
+
+  Arrow_Northwindfeatures:
+    As: icon.ChevronRight
+    OnSelect: =Navigate(NorthwindfeaturesDetailScreen, ScreenTransition.Fade)
+
+SearchInput_Northwindfeatures:
+  As: input.text
+  HintText: ="Search Northwindfeatures..."
+  Default: =""
+
+BrowseHeader_Northwindfeatures:
+  As: label.Text
+  Text: ="Northwindfeatures"
+  FontWeight: =FontWeight.Bold
+
+AddButton_Northwindfeatures:
+  As: icon.Add
+  OnSelect: =NewForm(EditForm_Northwindfeatures); Navigate(NorthwindfeaturesEditScreen, ScreenTransition.Slide)

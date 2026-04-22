@@ -1,0 +1,30 @@
+# Orders Detail Screen
+As: Screen
+
+DetailForm_Orders:
+  As: form.Display
+  DataSource: =auto_orders
+  Item: =BrowseGallery_Orders.Selected
+
+  DataCard_Orders_auto_ordersname:
+    As: dataCard
+    FieldDisplayName: ="Ordersname"
+    DataField: ="auto_ordersname"
+
+
+DetailHeader_Orders:
+  As: label.Text
+  Text: ="Orders Detail"
+  FontWeight: =FontWeight.Bold
+
+BackButton_Detail_Orders:
+  As: icon.Back
+  OnSelect: =Back()
+
+EditButton_Orders:
+  As: icon.Edit
+  OnSelect: =EditForm(EditForm_Orders); Navigate(OrdersEditScreen, ScreenTransition.Slide)
+
+DeleteButton_Orders:
+  As: icon.Trash
+  OnSelect: =Remove(auto_orders, BrowseGallery_Orders.Selected); Back()

@@ -1,0 +1,102 @@
+{
+  "table_name": "Orders",
+  "primary_keys": [],
+  "columns": [
+    {
+      "name": "OrderID",
+      "type": "L",
+      "mdb_type": "L",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 1
+    },
+    {
+      "name": "EmployeeID",
+      "type": "L",
+      "mdb_type": "L",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 2
+    },
+    {
+      "name": "CustomerID",
+      "type": "L",
+      "mdb_type": "L",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 3
+    },
+    {
+      "name": "OrderDate",
+      "type": "D",
+      "mdb_type": "D",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 4
+    },
+    {
+      "name": "ShippedDate",
+      "type": "D",
+      "mdb_type": "D",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 5
+    },
+    {
+      "name": "PaidDate",
+      "type": "D",
+      "mdb_type": "D",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 6
+    },
+    {
+      "name": "Notes",
+      "type": "M",
+      "mdb_type": "M",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 7
+    },
+    {
+      "name": "StatusID",
+      "type": "L",
+      "mdb_type": "L",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 8
+    },
+    {
+      "name": "AddedBy",
+      "type": "T",
+      "mdb_type": "T",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 9
+    },
+    {
+      "name": "AddedOn",
+      "type": "D",
+      "mdb_type": "D",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 10
+    },
+    {
+      "name": "ModifiedBy",
+      "type": "T",
+      "mdb_type": "T",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 11
+    },
+    {
+      "name": "ModifiedOn",
+      "type": "D",
+      "mdb_type": "D",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 12
+    }
+  ]
+}

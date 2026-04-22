@@ -1,0 +1,70 @@
+{
+  "table_name": "OrderStatus",
+  "primary_keys": [],
+  "columns": [
+    {
+      "name": "StatusID",
+      "type": "L",
+      "mdb_type": "L",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 1
+    },
+    {
+      "name": "StatusCode",
+      "type": "T",
+      "mdb_type": "T",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 2
+    },
+    {
+      "name": "StatusName",
+      "type": "T",
+      "mdb_type": "T",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 3
+    },
+    {
+      "name": "SortOrder",
+      "type": "B",
+      "mdb_type": "B",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 4
+    },
+    {
+      "name": "AddedBy",
+      "type": "T",
+      "mdb_type": "T",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 5
+    },
+    {
+      "name": "AddedOn",
+      "type": "D",
+      "mdb_type": "D",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 6
+    },
+    {
+      "name": "ModifiedBy",
+      "type": "T",
+      "mdb_type": "T",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 7
+    },
+    {
+      "name": "ModifiedOn",
+      "type": "D",
+      "mdb_type": "D",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 8
+    }
+  ]
+}

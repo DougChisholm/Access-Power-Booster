@@ -1,0 +1,34 @@
+# Employees Edit/New Screen
+As: Screen
+
+EditForm_Employees:
+  As: form.Edit
+  DataSource: =auto_employees
+  Item: =BrowseGallery_Employees.Selected
+
+  EditCard_Employees_auto_employeesname:
+    As: dataCard
+    FieldDisplayName: ="Employeesname"
+    DataField: ="auto_employeesname"
+    Required: =true
+
+
+EditHeader_Employees:
+  As: label.Text
+  Text: =If(EditForm_Employees.Mode = FormMode.New, "New Employees", "Edit Employees")
+  FontWeight: =FontWeight.Bold
+
+SaveButton_Employees:
+  As: button.Button
+  Text: ="Save"
+  OnSelect: |=
+    If(EditForm_Employees.Valid,
+      SubmitForm(EditForm_Employees);
+      Navigate(EmployeesBrowseScreen, ScreenTransition.Back),
+      Notify("Please fill in all required fields.", NotificationType.Warning)
+    )
+
+CancelButton_Employees:
+  As: button.Button
+  Text: ="Cancel"
+  OnSelect: =ResetForm(EditForm_Employees); Back()

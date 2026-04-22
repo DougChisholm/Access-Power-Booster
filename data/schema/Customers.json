@@ -1,0 +1,142 @@
+{
+  "table_name": "Customers",
+  "primary_keys": [],
+  "columns": [
+    {
+      "name": "CustomerID",
+      "type": "L",
+      "mdb_type": "L",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 1
+    },
+    {
+      "name": "CustomerName",
+      "type": "T",
+      "mdb_type": "T",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 2
+    },
+    {
+      "name": "PrimaryContactLastName",
+      "type": "T",
+      "mdb_type": "T",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 3
+    },
+    {
+      "name": "PrimaryContactFirstName",
+      "type": "T",
+      "mdb_type": "T",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 4
+    },
+    {
+      "name": "PrimaryContactJobTitle",
+      "type": "T",
+      "mdb_type": "T",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 5
+    },
+    {
+      "name": "PrimaryContactEmailAddress",
+      "type": "T",
+      "mdb_type": "T",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 6
+    },
+    {
+      "name": "BusinessPhone",
+      "type": "T",
+      "mdb_type": "T",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 7
+    },
+    {
+      "name": "Address",
+      "type": "T",
+      "mdb_type": "T",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 8
+    },
+    {
+      "name": "City",
+      "type": "T",
+      "mdb_type": "T",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 9
+    },
+    {
+      "name": "State",
+      "type": "T",
+      "mdb_type": "T",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 10
+    },
+    {
+      "name": "Zip",
+      "type": "T",
+      "mdb_type": "T",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 11
+    },
+    {
+      "name": "Website",
+      "type": "M",
+      "mdb_type": "M",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 12
+    },
+    {
+      "name": "Notes",
+      "type": "M",
+      "mdb_type": "M",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 13
+    },
+    {
+      "name": "AddedBy",
+      "type": "T",
+      "mdb_type": "T",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 14
+    },
+    {
+      "name": "AddedOn",
+      "type": "D",
+      "mdb_type": "D",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 15
+    },
+    {
+      "name": "ModifiedBy",
+      "type": "T",
+      "mdb_type": "T",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 16
+    },
+    {
+      "name": "ModifiedOn",
+      "type": "D",
+      "mdb_type": "D",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 17
+    }
+  ]
+}

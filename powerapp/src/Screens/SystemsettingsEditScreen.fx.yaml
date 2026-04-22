@@ -1,0 +1,34 @@
+# Systemsettings Edit/New Screen
+As: Screen
+
+EditForm_Systemsettings:
+  As: form.Edit
+  DataSource: =auto_systemsettings
+  Item: =BrowseGallery_Systemsettings.Selected
+
+  EditCard_Systemsettings_auto_systemsettingsname:
+    As: dataCard
+    FieldDisplayName: ="Systemsettingsname"
+    DataField: ="auto_systemsettingsname"
+    Required: =true
+
+
+EditHeader_Systemsettings:
+  As: label.Text
+  Text: =If(EditForm_Systemsettings.Mode = FormMode.New, "New Systemsettings", "Edit Systemsettings")
+  FontWeight: =FontWeight.Bold
+
+SaveButton_Systemsettings:
+  As: button.Button
+  Text: ="Save"
+  OnSelect: |=
+    If(EditForm_Systemsettings.Valid,
+      SubmitForm(EditForm_Systemsettings);
+      Navigate(SystemsettingsBrowseScreen, ScreenTransition.Back),
+      Notify("Please fill in all required fields.", NotificationType.Warning)
+    )
+
+CancelButton_Systemsettings:
+  As: button.Button
+  Text: ="Cancel"
+  OnSelect: =ResetForm(EditForm_Systemsettings); Back()

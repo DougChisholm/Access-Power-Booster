@@ -1,0 +1,33 @@
+# Customers Browse Screen
+As: Screen
+
+BrowseGallery_Customers:
+  As: gallery.Vertical
+  Items: =Filter(auto_customers, StartsWith(auto_customersname, SearchInput_Customers.Text))
+  TemplateSize: =72
+
+  Title_Customers:
+    As: label.Text
+    Text: =ThisItem.auto_customersname
+
+  Subtitle_Customers:
+    As: label.Text
+    Text: =ThisItem.auto_customersname
+
+  Arrow_Customers:
+    As: icon.ChevronRight
+    OnSelect: =Navigate(CustomersDetailScreen, ScreenTransition.Fade)
+
+SearchInput_Customers:
+  As: input.text
+  HintText: ="Search Customers..."
+  Default: =""
+
+BrowseHeader_Customers:
+  As: label.Text
+  Text: ="Customers"
+  FontWeight: =FontWeight.Bold
+
+AddButton_Customers:
+  As: icon.Add
+  OnSelect: =NewForm(EditForm_Customers); Navigate(CustomersEditScreen, ScreenTransition.Slide)

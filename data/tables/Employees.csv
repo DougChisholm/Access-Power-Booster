@@ -1,0 +1,12 @@
+EmployeeID,FirstName,LastName,FullNameFNLN,FullNameLNFN,EmailAddress,JobTitle,PrimaryPhone,SecondaryPhone,Title,Notes,Attachments,WindowsUserName,AddedBy,AddedOn,ModifiedBy,ModifiedOn
+1,"Nancy","Freehafer",,,"nancy@northwindtraders.com","Sales Representative","123-555-0100","123-555-0200","Ms.",,1,,"Admin","03/02/26 00:00:00","Admin","03/02/26 00:00:00"
+2,"Andrew","Cencini",,,"andrew@northwindtraders.com","Vice President, Sales","123-555-0101",,"Dr.","Joined the company as a sales representative, was promoted to sales manager and was then named vice president of sales.",2,,"Admin","03/02/26 00:00:00","Admin","03/02/26 00:00:00"
+3,"Jan","Kotas",,,"jan@northwindtraders.com","Sales Representative","123-555-0102",,"Dr.","Was hired as a sales associate and was promoted to sales representative.",3,,"Admin","03/02/26 00:00:00","Admin","03/02/26 00:00:00"
+4,"Mariya","Sergienko",,,"mariya@northwindtraders.com","Sales Representative","123-555-0103",,,,4,,"Admin","03/02/26 00:00:00","Admin","03/02/26 00:00:00"
+5,"Steven","Thorpe",,,"steven@northwindtraders.com","Sales Manager","123-555-0104",,,"Joined the company as a sales representative and was promoted to sales manager.  Fluent in French.",5,,"Admin","03/02/26 00:00:00","Admin","03/02/26 00:00:00"
+6,"Michael","Neipper",,,"michael@northwindtraders.com","Sales Representative","123-555-0105",,,"Fluent in Japanese and can read and write French, Portuguese, and Spanish.",6,,"Admin","03/02/26 00:00:00","Admin","03/02/26 00:00:00"
+7,"Robert","Zare",,,"robert@northwindtraders.com","Sales Representative","123-555-0106",,"Mr.",,7,,"Admin","03/02/26 00:00:00","Admin","03/02/26 00:00:00"
+8,"Laura","Giussani",,,"laura@northwindtraders.com","Sales Coordinator","123-555-0107",,,"Reads and writes French.",8,,"Admin","03/02/26 00:00:00","Admin","03/02/26 00:00:00"
+9,"Anne","Hellung-Larsen",,,"anne@northwindtraders.com","Sales Representative","1235550108",,,"Fluent in French and German.",9,,"Admin","03/02/26 00:00:00","Admin","03/02/26 00:00:00"
+10,"Internet","Sales",,,,"Internet Bot",,,,,10,,"Admin","03/02/26 00:00:00","Admin","03/02/26 00:00:00"
+11,"Bob","Harrison",,,,"Director",,,,,12,"mharriso","mharriso","03/26/26 13:21:30","mharriso","03/26/26 13:21:30"

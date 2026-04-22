@@ -1,0 +1,78 @@
+{
+  "table_name": "Products",
+  "primary_keys": [],
+  "columns": [
+    {
+      "name": "ProductID",
+      "type": "L",
+      "mdb_type": "L",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 1
+    },
+    {
+      "name": "ProductCode",
+      "type": "T",
+      "mdb_type": "T",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 2
+    },
+    {
+      "name": "ProductName",
+      "type": "T",
+      "mdb_type": "T",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 3
+    },
+    {
+      "name": "ProductDescription",
+      "type": "M",
+      "mdb_type": "M",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 4
+    },
+    {
+      "name": "UnitPrice",
+      "type": "C",
+      "mdb_type": "C",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 5
+    },
+    {
+      "name": "AddedBy",
+      "type": "T",
+      "mdb_type": "T",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 6
+    },
+    {
+      "name": "AddedOn",
+      "type": "D",
+      "mdb_type": "D",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 7
+    },
+    {
+      "name": "ModifiedBy",
+      "type": "T",
+      "mdb_type": "T",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 8
+    },
+    {
+      "name": "ModifiedOn",
+      "type": "D",
+      "mdb_type": "D",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 9
+    }
+  ]
+}

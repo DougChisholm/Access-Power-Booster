@@ -1,0 +1,30 @@
+# Welcome Detail Screen
+As: Screen
+
+DetailForm_Welcome:
+  As: form.Display
+  DataSource: =auto_welcome
+  Item: =BrowseGallery_Welcome.Selected
+
+  DataCard_Welcome_auto_welcomename:
+    As: dataCard
+    FieldDisplayName: ="Welcomename"
+    DataField: ="auto_welcomename"
+
+
+DetailHeader_Welcome:
+  As: label.Text
+  Text: ="Welcome Detail"
+  FontWeight: =FontWeight.Bold
+
+BackButton_Detail_Welcome:
+  As: icon.Back
+  OnSelect: =Back()
+
+EditButton_Welcome:
+  As: icon.Edit
+  OnSelect: =EditForm(EditForm_Welcome); Navigate(WelcomeEditScreen, ScreenTransition.Slide)
+
+DeleteButton_Welcome:
+  As: icon.Trash
+  OnSelect: =Remove(auto_welcome, BrowseGallery_Welcome.Selected); Back()

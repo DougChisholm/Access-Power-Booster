@@ -1,0 +1,142 @@
+{
+  "table_name": "Employees",
+  "primary_keys": [],
+  "columns": [
+    {
+      "name": "EmployeeID",
+      "type": "L",
+      "mdb_type": "L",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 1
+    },
+    {
+      "name": "FirstName",
+      "type": "T",
+      "mdb_type": "T",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 2
+    },
+    {
+      "name": "LastName",
+      "type": "T",
+      "mdb_type": "T",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 3
+    },
+    {
+      "name": "FullNameFNLN",
+      "type": "T",
+      "mdb_type": "T",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 4
+    },
+    {
+      "name": "FullNameLNFN",
+      "type": "T",
+      "mdb_type": "T",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 5
+    },
+    {
+      "name": "EmailAddress",
+      "type": "T",
+      "mdb_type": "T",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 6
+    },
+    {
+      "name": "JobTitle",
+      "type": "T",
+      "mdb_type": "T",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 7
+    },
+    {
+      "name": "PrimaryPhone",
+      "type": "T",
+      "mdb_type": "T",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 8
+    },
+    {
+      "name": "SecondaryPhone",
+      "type": "T",
+      "mdb_type": "T",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 9
+    },
+    {
+      "name": "Title",
+      "type": "T",
+      "mdb_type": "T",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 10
+    },
+    {
+      "name": "Notes",
+      "type": "M",
+      "mdb_type": "M",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 11
+    },
+    {
+      "name": "Attachments",
+      "type": "U",
+      "mdb_type": "U",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 12
+    },
+    {
+      "name": "WindowsUserName",
+      "type": "T",
+      "mdb_type": "T",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 13
+    },
+    {
+      "name": "AddedBy",
+      "type": "T",
+      "mdb_type": "T",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 14
+    },
+    {
+      "name": "AddedOn",
+      "type": "D",
+      "mdb_type": "D",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 15
+    },
+    {
+      "name": "ModifiedBy",
+      "type": "T",
+      "mdb_type": "T",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 16
+    },
+    {
+      "name": "ModifiedOn",
+      "type": "D",
+      "mdb_type": "D",
+      "max_length": null,
+      "nullable": true,
+      "ordinal": 17
+    }
+  ]
+}

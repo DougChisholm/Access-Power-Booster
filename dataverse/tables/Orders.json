@@ -1,0 +1,65 @@
+{
+  "@odata.type": "Microsoft.Dynamics.CRM.EntityMetadata",
+  "SchemaName": "auto_orders",
+  "LogicalName": "auto_orders",
+  "DisplayName": {
+    "@odata.type": "Microsoft.Dynamics.CRM.Label",
+    "LocalizedLabels": [
+      {
+        "@odata.type": "Microsoft.Dynamics.CRM.LocalizedLabel",
+        "Label": "Orders",
+        "LanguageCode": 1033
+      }
+    ]
+  },
+  "DisplayCollectionName": {
+    "@odata.type": "Microsoft.Dynamics.CRM.Label",
+    "LocalizedLabels": [
+      {
+        "@odata.type": "Microsoft.Dynamics.CRM.LocalizedLabel",
+        "Label": "Orderss",
+        "LanguageCode": 1033
+      }
+    ]
+  },
+  "Description": {
+    "@odata.type": "Microsoft.Dynamics.CRM.Label",
+    "LocalizedLabels": [
+      {
+        "@odata.type": "Microsoft.Dynamics.CRM.LocalizedLabel",
+        "Label": "Migrated from Access table: Orders",
+        "LanguageCode": 1033
+      }
+    ]
+  },
+  "OwnershipType": "UserOwned",
+  "HasActivities": false,
+  "HasNotes": false,
+  "IsActivity": false,
+  "IsAuditEnabled": {
+    "Value": false
+  },
+  "PrimaryNameAttribute": "auto_ordersname",
+  "PrimaryAttribute": {
+    "@odata.type": "Microsoft.Dynamics.CRM.StringAttributeMetadata",
+    "SchemaName": "auto_ordersname",
+    "LogicalName": "auto_ordersname",
+    "DisplayName": {
+      "@odata.type": "Microsoft.Dynamics.CRM.Label",
+      "LocalizedLabels": [
+        {
+          "@odata.type": "Microsoft.Dynamics.CRM.LocalizedLabel",
+          "Label": "Name",
+          "LanguageCode": 1033
+        }
+      ]
+    },
+    "RequiredLevel": {
+      "Value": "ApplicationRequired"
+    },
+    "MaxLength": 255
+  },
+  "Columns": [],
+  "access_source_table": "Orders",
+  "access_primary_keys": []
+}

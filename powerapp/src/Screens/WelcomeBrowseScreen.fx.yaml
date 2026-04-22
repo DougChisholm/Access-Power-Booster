@@ -1,0 +1,33 @@
+# Welcome Browse Screen
+As: Screen
+
+BrowseGallery_Welcome:
+  As: gallery.Vertical
+  Items: =Filter(auto_welcome, StartsWith(auto_welcomename, SearchInput_Welcome.Text))
+  TemplateSize: =72
+
+  Title_Welcome:
+    As: label.Text
+    Text: =ThisItem.auto_welcomename
+
+  Subtitle_Welcome:
+    As: label.Text
+    Text: =ThisItem.auto_welcomename
+
+  Arrow_Welcome:
+    As: icon.ChevronRight
+    OnSelect: =Navigate(WelcomeDetailScreen, ScreenTransition.Fade)
+
+SearchInput_Welcome:
+  As: input.text
+  HintText: ="Search Welcome..."
+  Default: =""
+
+BrowseHeader_Welcome:
+  As: label.Text
+  Text: ="Welcome"
+  FontWeight: =FontWeight.Bold
+
+AddButton_Welcome:
+  As: icon.Add
+  OnSelect: =NewForm(EditForm_Welcome); Navigate(WelcomeEditScreen, ScreenTransition.Slide)

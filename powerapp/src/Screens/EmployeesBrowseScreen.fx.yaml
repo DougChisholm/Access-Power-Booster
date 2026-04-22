@@ -1,0 +1,33 @@
+# Employees Browse Screen
+As: Screen
+
+BrowseGallery_Employees:
+  As: gallery.Vertical
+  Items: =Filter(auto_employees, StartsWith(auto_employeesname, SearchInput_Employees.Text))
+  TemplateSize: =72
+
+  Title_Employees:
+    As: label.Text
+    Text: =ThisItem.auto_employeesname
+
+  Subtitle_Employees:
+    As: label.Text
+    Text: =ThisItem.auto_employeesname
+
+  Arrow_Employees:
+    As: icon.ChevronRight
+    OnSelect: =Navigate(EmployeesDetailScreen, ScreenTransition.Fade)
+
+SearchInput_Employees:
+  As: input.text
+  HintText: ="Search Employees..."
+  Default: =""
+
+BrowseHeader_Employees:
+  As: label.Text
+  Text: ="Employees"
+  FontWeight: =FontWeight.Bold
+
+AddButton_Employees:
+  As: icon.Add
+  OnSelect: =NewForm(EditForm_Employees); Navigate(EmployeesEditScreen, ScreenTransition.Slide)

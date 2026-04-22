@@ -1,0 +1,33 @@
+# Orders Browse Screen
+As: Screen
+
+BrowseGallery_Orders:
+  As: gallery.Vertical
+  Items: =Filter(auto_orders, StartsWith(auto_ordersname, SearchInput_Orders.Text))
+  TemplateSize: =72
+
+  Title_Orders:
+    As: label.Text
+    Text: =ThisItem.auto_ordersname
+
+  Subtitle_Orders:
+    As: label.Text
+    Text: =ThisItem.auto_ordersname
+
+  Arrow_Orders:
+    As: icon.ChevronRight
+    OnSelect: =Navigate(OrdersDetailScreen, ScreenTransition.Fade)
+
+SearchInput_Orders:
+  As: input.text
+  HintText: ="Search Orders..."
+  Default: =""
+
+BrowseHeader_Orders:
+  As: label.Text
+  Text: ="Orders"
+  FontWeight: =FontWeight.Bold
+
+AddButton_Orders:
+  As: icon.Add
+  OnSelect: =NewForm(EditForm_Orders); Navigate(OrdersEditScreen, ScreenTransition.Slide)

@@ -1,0 +1,30 @@
+# Northwindfeatures Detail Screen
+As: Screen
+
+DetailForm_Northwindfeatures:
+  As: form.Display
+  DataSource: =auto_northwindfeatures
+  Item: =BrowseGallery_Northwindfeatures.Selected
+
+  DataCard_Northwindfeatures_auto_northwindfeaturesname:
+    As: dataCard
+    FieldDisplayName: ="Northwindfeaturesname"
+    DataField: ="auto_northwindfeaturesname"
+
+
+DetailHeader_Northwindfeatures:
+  As: label.Text
+  Text: ="Northwindfeatures Detail"
+  FontWeight: =FontWeight.Bold
+
+BackButton_Detail_Northwindfeatures:
+  As: icon.Back
+  OnSelect: =Back()
+
+EditButton_Northwindfeatures:
+  As: icon.Edit
+  OnSelect: =EditForm(EditForm_Northwindfeatures); Navigate(NorthwindfeaturesEditScreen, ScreenTransition.Slide)
+
+DeleteButton_Northwindfeatures:
+  As: icon.Trash
+  OnSelect: =Remove(auto_northwindfeatures, BrowseGallery_Northwindfeatures.Selected); Back()

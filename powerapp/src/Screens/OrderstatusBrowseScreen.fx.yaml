@@ -1,0 +1,33 @@
+# Orderstatus Browse Screen
+As: Screen
+
+BrowseGallery_Orderstatus:
+  As: gallery.Vertical
+  Items: =Filter(auto_orderstatus, StartsWith(auto_orderstatusname, SearchInput_Orderstatus.Text))
+  TemplateSize: =72
+
+  Title_Orderstatus:
+    As: label.Text
+    Text: =ThisItem.auto_orderstatusname
+
+  Subtitle_Orderstatus:
+    As: label.Text
+    Text: =ThisItem.auto_orderstatusname
+
+  Arrow_Orderstatus:
+    As: icon.ChevronRight
+    OnSelect: =Navigate(OrderstatusDetailScreen, ScreenTransition.Fade)
+
+SearchInput_Orderstatus:
+  As: input.text
+  HintText: ="Search Orderstatus..."
+  Default: =""
+
+BrowseHeader_Orderstatus:
+  As: label.Text
+  Text: ="Orderstatus"
+  FontWeight: =FontWeight.Bold
+
+AddButton_Orderstatus:
+  As: icon.Add
+  OnSelect: =NewForm(EditForm_Orderstatus); Navigate(OrderstatusEditScreen, ScreenTransition.Slide)

@@ -1,0 +1,34 @@
+# Products Edit/New Screen
+As: Screen
+
+EditForm_Products:
+  As: form.Edit
+  DataSource: =auto_products
+  Item: =BrowseGallery_Products.Selected
+
+  EditCard_Products_auto_productsname:
+    As: dataCard
+    FieldDisplayName: ="Productsname"
+    DataField: ="auto_productsname"
+    Required: =true
+
+
+EditHeader_Products:
+  As: label.Text
+  Text: =If(EditForm_Products.Mode = FormMode.New, "New Products", "Edit Products")
+  FontWeight: =FontWeight.Bold
+
+SaveButton_Products:
+  As: button.Button
+  Text: ="Save"
+  OnSelect: |=
+    If(EditForm_Products.Valid,
+      SubmitForm(EditForm_Products);
+      Navigate(ProductsBrowseScreen, ScreenTransition.Back),
+      Notify("Please fill in all required fields.", NotificationType.Warning)
+    )
+
+CancelButton_Products:
+  As: button.Button
+  Text: ="Cancel"
+  OnSelect: =ResetForm(EditForm_Products); Back()

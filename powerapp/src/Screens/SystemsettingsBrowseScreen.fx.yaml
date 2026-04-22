@@ -1,0 +1,33 @@
+# Systemsettings Browse Screen
+As: Screen
+
+BrowseGallery_Systemsettings:
+  As: gallery.Vertical
+  Items: =Filter(auto_systemsettings, StartsWith(auto_systemsettingsname, SearchInput_Systemsettings.Text))
+  TemplateSize: =72
+
+  Title_Systemsettings:
+    As: label.Text
+    Text: =ThisItem.auto_systemsettingsname
+
+  Subtitle_Systemsettings:
+    As: label.Text
+    Text: =ThisItem.auto_systemsettingsname
+
+  Arrow_Systemsettings:
+    As: icon.ChevronRight
+    OnSelect: =Navigate(SystemsettingsDetailScreen, ScreenTransition.Fade)
+
+SearchInput_Systemsettings:
+  As: input.text
+  HintText: ="Search Systemsettings..."
+  Default: =""
+
+BrowseHeader_Systemsettings:
+  As: label.Text
+  Text: ="Systemsettings"
+  FontWeight: =FontWeight.Bold
+
+AddButton_Systemsettings:
+  As: icon.Add
+  OnSelect: =NewForm(EditForm_Systemsettings); Navigate(SystemsettingsEditScreen, ScreenTransition.Slide)

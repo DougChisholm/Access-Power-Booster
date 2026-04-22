@@ -1,0 +1,33 @@
+# Orderdetails Browse Screen
+As: Screen
+
+BrowseGallery_Orderdetails:
+  As: gallery.Vertical
+  Items: =Filter(auto_orderdetails, StartsWith(auto_orderdetailsname, SearchInput_Orderdetails.Text))
+  TemplateSize: =72
+
+  Title_Orderdetails:
+    As: label.Text
+    Text: =ThisItem.auto_orderdetailsname
+
+  Subtitle_Orderdetails:
+    As: label.Text
+    Text: =ThisItem.auto_orderdetailsname
+
+  Arrow_Orderdetails:
+    As: icon.ChevronRight
+    OnSelect: =Navigate(OrderdetailsDetailScreen, ScreenTransition.Fade)
+
+SearchInput_Orderdetails:
+  As: input.text
+  HintText: ="Search Orderdetails..."
+  Default: =""
+
+BrowseHeader_Orderdetails:
+  As: label.Text
+  Text: ="Orderdetails"
+  FontWeight: =FontWeight.Bold
+
+AddButton_Orderdetails:
+  As: icon.Add
+  OnSelect: =NewForm(EditForm_Orderdetails); Navigate(OrderdetailsEditScreen, ScreenTransition.Slide)

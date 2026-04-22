@@ -8,9 +8,9 @@ Converts a Microsoft Access (`.accdb`) database into **Microsoft Dataverse table
 
 | Requirement | Notes |
 |---|---|
-| **Windows 10/11 or Windows Server** | OLEDB Access driver is Windows-only |
+| **Linux or Windows** | Tested in GitHub Codespaces (Ubuntu) |
 | **Python 3.9+** | `python --version` |
-| **Microsoft Access Database Engine** | [Download 2016+](https://www.microsoft.com/en-us/download/details.aspx?id=54920) — use the latest 64-bit version compatible with your Office installation |
+| **mdbtools** | `sudo apt-get install mdbtools` — reads `.accdb`/`.mdb` files on Linux |
 | **Power Platform CLI (`pac`)** | [Install guide](https://aka.ms/PowerAppsCLI) |
 | **Azure CLI (`az`)** | Optional — used as token fallback |
 | **Power Platform environment** | With Dataverse enabled |
@@ -25,13 +25,14 @@ Converts a Microsoft Access (`.accdb`) database into **Microsoft Dataverse table
 ├── input/
 │   └── Database3.accdb         ← Your Access database (place it here)
 ├── scripts/
-│   ├── extract_access.py       ← Step 1: Extract schema + data from Access
+│   ├── extract_access_linux.py ← Step 1: Extract schema + data from Access (mdbtools)
+│   ├── extract_access.py       ← Step 1: (Windows-only alternative, requires OLEDB)
 │   ├── generate_dataverse_schema.py  ← Step 2: Map to Dataverse types
 │   ├── migrate_data.py         ← Step 4: Load CSV data into Dataverse
 │   ├── generate_powerapp.py    ← Step 5: Generate Canvas App source
-│   ├── auth.ps1                ← Step 3a: pac authentication
-│   ├── create-solution.ps1     ← Step 3b: Create Dataverse solution + tables
-│   └── import-solution.ps1     ← Step 3c: Pack + import Canvas App
+│   ├── auth.sh                ← Step 3a: pac authentication
+│   ├── create-solution.sh     ← Step 3b: Create Dataverse solution + tables
+│   └── import-solution.sh     ← Step 3c: Pack + import Canvas App
 ├── dataverse/
 │   ├── tables/                 ← Generated Dataverse table JSON definitions
 │   └── relationships.json      ← Detected FK relationships
@@ -46,7 +47,7 @@ Converts a Microsoft Access (`.accdb`) database into **Microsoft Dataverse table
 │           ├── <Table>BrowseScreen.fx.yaml
 │           ├── <Table>DetailScreen.fx.yaml
 │           └── <Table>EditScreen.fx.yaml
-├── run-all.ps1                 ← Master orchestration script
+├── run-all.sh                  ← Master orchestration script
 ├── .env.example                ← Environment variable template
 └── README.md
 ```
@@ -57,11 +58,11 @@ Converts a Microsoft Access (`.accdb`) database into **Microsoft Dataverse table
 
 ### 1. Clone and configure
 
-```powershell
+```bash
 # Copy environment template
-Copy-Item .env.example .env
+cp .env.example .env
 # Edit .env with your values
-notepad .env
+nano .env
 ```
 
 Fill in `.env`:
@@ -73,10 +74,11 @@ AZURE_CLIENT_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 AZURE_CLIENT_SECRET=your-client-secret-here
 ```
 
-### 2. Install Python dependencies
+### 2. Install dependencies
 
-```powershell
-pip install pyodbc requests msal
+```bash
+sudo apt-get install mdbtools
+pip install requests msal
 ```
 
 ### 3. Place your Access database
@@ -91,21 +93,21 @@ input/Database3.accdb
 
 ### All-in-one (recommended)
 
-```powershell
-.\run-all.ps1
+```bash
+./run-all.sh
 ```
 
 ### Skip flags
 
-```powershell
+```bash
 # Skip extraction if data/schema/ and data/tables/ already exist
-.\run-all.ps1 -SkipExtract
+./run-all.sh --skip-extract
 
 # Validate data migration without inserting records
-.\run-all.ps1 -DryRun
+./run-all.sh --dry-run
 
 # Skip Power App generation and import
-.\run-all.ps1 -SkipApp
+./run-all.sh --skip-app
 ```
 
 ---
@@ -114,9 +116,9 @@ input/Database3.accdb
 
 ### Step 1 — Extract Access DB
 
-```powershell
+```bash
 cd scripts
-python extract_access.py --db ../input/Database3.accdb
+python extract_access_linux.py --db ../input/Database3.accdb
 ```
 
 Outputs:
@@ -126,7 +128,7 @@ Outputs:
 
 ### Step 2 — Generate Dataverse Schema
 
-```powershell
+```bash
 python generate_dataverse_schema.py
 ```
 
@@ -137,17 +139,17 @@ Outputs:
 
 ### Step 3 — Deploy Dataverse Schema
 
-```powershell
+```bash
 # Authenticate
-.\scripts\auth.ps1
+./scripts/auth.sh
 
 # Create solution + tables + relationships
-.\scripts\create-solution.ps1
+./scripts/create-solution.sh
 ```
 
 ### Step 4 — Migrate Data
 
-```powershell
+```bash
 python scripts/migrate_data.py
 # or dry-run:
 python scripts/migrate_data.py --dry-run
@@ -157,7 +159,7 @@ python scripts/migrate_data.py --table Customers
 
 ### Step 5 — Generate Power App
 
-```powershell
+```bash
 python scripts/generate_powerapp.py
 ```
 
@@ -165,8 +167,8 @@ Outputs screen files to `powerapp/src/Screens/`.
 
 ### Step 6 — Import App + Solution
 
-```powershell
-.\scripts\import-solution.ps1
+```bash
+./scripts/import-solution.sh
 ```
 
 ---
@@ -200,7 +202,7 @@ Outputs screen files to `powerapp/src/Screens/`.
 
 ## Known Limitations
 
-- **Windows only** — The OLEDB Access driver is not available on macOS/Linux.
+- **mdbtools** is used for extraction — some edge-case type detection may differ from the Windows OLEDB driver.
 - **OLE Object columns** are skipped (binary blobs are not supported in Dataverse via Web API).
 - **Complex relationships** (many-to-many) are not auto-detected — add manually in Power Apps Studio.
 - **Attachment columns** are not migrated.
@@ -214,7 +216,7 @@ Outputs screen files to `powerapp/src/Screens/`.
 
 | Issue | Fix |
 |---|---|
-| `pyodbc.Error: No suitable driver` | Install [Access Database Engine 2016](https://www.microsoft.com/en-us/download/details.aspx?id=54920) |
+| `mdb-tables: command not found` | Install mdbtools: `sudo apt-get install mdbtools` |
 | `pac: command not found` | Install [Power Platform CLI](https://aka.ms/PowerAppsCLI) and restart terminal |
 | `401 Unauthorized` on Dataverse API | Check `AZURE_CLIENT_ID`/`SECRET`/`TENANT_ID` in `.env` |
 | `pac canvas pack` fails | Ensure pac CLI version ≥ 1.27; run `pac install latest` |

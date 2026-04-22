@@ -1,0 +1,30 @@
+# Orderstatus Detail Screen
+As: Screen
+
+DetailForm_Orderstatus:
+  As: form.Display
+  DataSource: =auto_orderstatus
+  Item: =BrowseGallery_Orderstatus.Selected
+
+  DataCard_Orderstatus_auto_orderstatusname:
+    As: dataCard
+    FieldDisplayName: ="Orderstatusname"
+    DataField: ="auto_orderstatusname"
+
+
+DetailHeader_Orderstatus:
+  As: label.Text
+  Text: ="Orderstatus Detail"
+  FontWeight: =FontWeight.Bold
+
+BackButton_Detail_Orderstatus:
+  As: icon.Back
+  OnSelect: =Back()
+
+EditButton_Orderstatus:
+  As: icon.Edit
+  OnSelect: =EditForm(EditForm_Orderstatus); Navigate(OrderstatusEditScreen, ScreenTransition.Slide)
+
+DeleteButton_Orderstatus:
+  As: icon.Trash
+  OnSelect: =Remove(auto_orderstatus, BrowseGallery_Orderstatus.Selected); Back()

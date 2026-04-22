@@ -1,0 +1,30 @@
+# Customers Detail Screen
+As: Screen
+
+DetailForm_Customers:
+  As: form.Display
+  DataSource: =auto_customers
+  Item: =BrowseGallery_Customers.Selected
+
+  DataCard_Customers_auto_customersname:
+    As: dataCard
+    FieldDisplayName: ="Customersname"
+    DataField: ="auto_customersname"
+
+
+DetailHeader_Customers:
+  As: label.Text
+  Text: ="Customers Detail"
+  FontWeight: =FontWeight.Bold
+
+BackButton_Detail_Customers:
+  As: icon.Back
+  OnSelect: =Back()
+
+EditButton_Customers:
+  As: icon.Edit
+  OnSelect: =EditForm(EditForm_Customers); Navigate(CustomersEditScreen, ScreenTransition.Slide)
+
+DeleteButton_Customers:
+  As: icon.Trash
+  OnSelect: =Remove(auto_customers, BrowseGallery_Customers.Selected); Back()
